@@ -4,8 +4,8 @@ import {Navbar, NavDropdown, Container, Nav} from "react-bootstrap";
 // import logo from "../assets/logo.png";
 
 const NavBar = (props) => {
-    return( 
-        <Navbar bg="light" expand="lg">
+    return(
+        <Navbar bg="#FFD24D" expand="lg">
         <Container>
         {/* <Navbar.Brand href="#home">
             <img
