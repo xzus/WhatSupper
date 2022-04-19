@@ -2,7 +2,14 @@ import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
 import HomePage from './pages/homePage';
-import calendarPage from './pages/calendarPage'
+import CalendarPage from './pages/calendarPage';
+import GroceriesPage from './pages/groceriesPage';
+import PantryPage from './pages/pantryPage';
+import VotingPage from './pages/votingPage';
+import PastRecipesPage from './pages/pastrecipesPage';
+
+
+
 
 import {
   BrowserRouter,
@@ -16,6 +23,21 @@ function App() {
     <div className="App">
 
       <NavBar/>
+
+      <BrowserRouter>
+        <Routes>        
+          <Route path='/home' element={<HomePage />} />
+          <Route path='/calendar' element={<CalendarPage />} />
+          <Route path='/groceries' element={<GroceriesPage />} />
+          <Route path='/pantry' element={<PantryPage />} />
+          <Route path='/voting' element={<VotingPage />} />
+          <Route path='/pastrecipes' element={<PastRecipesPage />} />
+
+
+
+
+        </Routes>
+      </BrowserRouter>
 
       {/* <BrowserRouter>
         <Routes>
