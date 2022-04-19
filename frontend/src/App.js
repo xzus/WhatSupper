@@ -8,9 +8,6 @@ import PantryPage from './pages/pantryPage';
 import VotingPage from './pages/votingPage';
 import PastRecipesPage from './pages/pastrecipesPage';
 
-
-
-
 import {
   BrowserRouter,
   Route,
@@ -23,6 +20,7 @@ function App() {
     <div className="App">
 
       <NavBar/>
+      <homePage/>
 
       <BrowserRouter>
         <Routes>        
