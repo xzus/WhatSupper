@@ -1,8 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
 import NavBar from './components/NavBar';
-import HomePage from './pages/homePage';
 import calendarPage from './pages/calendarPage'
+import homePage from './pages/homePage';
+
 
 import {
   BrowserRouter,
@@ -16,6 +17,7 @@ function App() {
     <div className="App">
 
       <NavBar/>
+      <homePage/>
 
       {/* <BrowserRouter>
         <Routes>
