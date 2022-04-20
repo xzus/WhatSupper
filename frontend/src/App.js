@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import NavBar from './components/NavBar';
 import HomePage from './pages/homePage';
@@ -7,9 +7,6 @@ import GroceriesPage from './pages/groceriesPage';
 import PantryPage from './pages/pantryPage';
 import VotingPage from './pages/votingPage';
 import PastRecipesPage from './pages/pastrecipesPage';
-
-
-
 
 import {
   BrowserRouter,
@@ -23,6 +20,7 @@ function App() {
     <div className="App">
 
       <NavBar/>
+      <homePage/>
 
       <BrowserRouter>
         <Routes>        
@@ -33,22 +31,15 @@ function App() {
           <Route path='/voting' element={<VotingPage />} />
           <Route path='/pastrecipes' element={<PastRecipesPage />} />
 
-
-
-
         </Routes>
       </BrowserRouter>
-
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/calendarPage">
-            <calendarPage />
-          </Route>
-        </Routes>
-      </BrowserRouter> */}
 
     </div>
   );
 }
 
+
+
 export default App;
+
+
