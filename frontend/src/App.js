@@ -31,22 +31,15 @@ function App() {
           <Route path='/voting' element={<VotingPage />} />
           <Route path='/pastrecipes' element={<PastRecipesPage />} />
 
-
-
-
         </Routes>
       </BrowserRouter>
-
-      {/* <BrowserRouter>
-        <Routes>
-          <Route path="/calendarPage">
-            <calendarPage />
-          </Route>
-        </Routes>
-      </BrowserRouter> */}
 
     </div>
   );
 }
 
+
+
 export default App;
+
+
