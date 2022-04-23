@@ -24,7 +24,7 @@ function homePage() {
         <Card.Body>
           <Card.Title>{titles[idx]}</Card.Title>
           <Card.Text>
-            <img src={pics[idx]} width="400" height="300"></img>
+            <img src={pics[idx]} width="300" height="300"></img>
           </Card.Text>
         </Card.Body>
       </Card>
