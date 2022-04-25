@@ -1,11 +1,73 @@
 import React from 'react';
+import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
 function groceriesPage() {
+    const [item, setItem] = useState("");
+    const [items, setItems] = useState([]);
+    const add = (e) => {
+      e.preventDefault();
+      if (!item) {
+        return;
+      }
+      setItems((items) => [
+        ...items,
+        {
+          id: uuidv4(),
+          item
+        }
+      ]);
+    };
+    const remove = (index) => {
+      setItems((items) => items.filter((_, i) => i !== index));
+    };
+
+    const titles = ["Pantry", "Produce", "Dairy", "Meat", "Frozen", "Miscellaneous"];
+
+
     return (
         <div>
             <h1>Grocery List </h1>
+            <Row xs={1} md={2} className="g-4">
+                {Array.from({ length: 6 }).map((_, idx) => (
+                    <Col>
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{titles[idx]}</Card.Title>
+                        <Card.Text>
+                            <form onSubmit={add}>
+                                <fieldset>
+                                    <label>item: </label>
+                                    <input value={item} onChange={(e) => setItem(e.target.value)} />
+                                    <button type="submit" class="btn btn-warning">add item</button>
+
+                                </fieldset>
+                            </form>
+
+                            {items.map((item, index) => {
+                                return (
+                                <div key={item.id}>
+                                    <p>
+                                        {item.item}
+                                        <button class="btn btn-warning" onClick={() => remove(index)}>remove</button>
+
+                                    </p>
+                                </div>
+                                );
+                            })}
+                            
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    </Col>
+                ))}
+            </Row>
+           
             
-            <button type="button" class="btn btn-outline-dark btn-lg">Add</button>
+            {/* <button type="button" class="btn btn-outline-dark btn-lg">Add</button>
                 
             <table class="table">
                 <thead>
@@ -105,7 +167,7 @@ function groceriesPage() {
                 </tr>
 
                 </tbody>
-            </table>
+            </table> */}
         </div>
     )
 }
