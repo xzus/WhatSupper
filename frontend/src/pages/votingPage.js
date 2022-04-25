@@ -33,18 +33,33 @@ class votingPage extends Component{
     };
 
     handleVote = (item) => {
-        this.toggle();
-
+        //this.toggle();
+		item.votes++;
+		console.log(item);
+		console.log(item.id);
         if (item.id){
             axios
-                .put('/api/recipes/${item.id}/', item)
+                .put('/api/recipes/' + item.id + '/', item)
                 .then((res) => this.refreshList());
             return;
         }
         axios
-            .post("api/recipes", item)
+            .post("api/recipes/", item)
             .then((res) => this.refreshList());
     };
+
+	// Reset the votes to 0
+	resetVotes = () => {
+		let rList = this.state.recipes;
+		rList.forEach((item) => {
+			item.votes = 0;
+			axios
+			.put('/api/recipes/' + item.id + '/', item)
+			.then((res) => this.refreshList());
+		return;
+		});
+	};
+	
 
 	vote (i) {
 		let newRecipes = [...this.state.recipes];
@@ -62,12 +77,18 @@ class votingPage extends Component{
 		return(
 			<>
 				<h1>Vote For Which Recipes You'd Like to Eat!</h1>
+				<button class = "reset" onClick={() => this.resetVotes()}>Reset</button>
 				<div className="recipes">
 					{
 						this.state.recipes.map((recip, i) => 
 							<div key={i} className="recipesVote">
-                                <div classname="voteButton">
-							    	<button class="voteButton" onClick={this.vote.bind(this, i)}>Vote</button>
+                                
+								
+								<div className="recipesNameVote">
+									{recip.recipe}
+								</div>
+								<div className="voteButton">
+							    	<button class="voteButton" onClick={() => this.handleVote(recip)}>Vote</button>
                                     {/* <button onClick={() => this.handleVote(item)}>Vote</button> */}
                                 </div>
 								<div className="voteCount">
@@ -76,11 +97,6 @@ class votingPage extends Component{
                                 <div className="recipePic">
 									<img src={recip.pic} width="300" height="200"></img>
 								</div>
-
-								<div className="recipesNameVote">
-									{recip.name}
-								</div>
-
 							</div>
 						)
 					}
