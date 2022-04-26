@@ -3,7 +3,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import HomePage from './pages/homePage';
 import CalendarPage from './pages/calendar/calendarPage';
-import GroceriesPage from './pages/groceriesPage';
+import GroceriesPage from './pages/GroceriesPage';
 import PantryPage from './pages/pantryPage';
 import VotingPage from './pages/votingPage';
 import PastRecipesPage from './pages/pastrecipesPage';
