@@ -12,6 +12,8 @@ class votingPage extends Component{
 				{name: "Pizza", votes: 0, pic: "https://austinspizza.com/wp-content/uploads/2019/03/ap-about-us-food-02.jpg"},
 				{name: "Tacos", votes: 0, pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQli0rEwuMjUfZQ_iTxGgxAUbFM0pZMGN0PrQ&usqp=CAU"}
 			],
+			// recipes : [],
+			// recipes : {recipe: "Pasta", votes: 0},
             modal: false
 		}
 	}
@@ -22,8 +24,8 @@ class votingPage extends Component{
 
     refreshList = () => {
         axios   
-            .get("/api/recipes/")
-            .then((res) => this.setState({recipes : res.data}))
+            .get("api/recipes/")
+            .then((res) => this.setState({recipes : res.data}).bind(this))
             .catch((err) => console.log(err));
 
     };
@@ -36,16 +38,16 @@ class votingPage extends Component{
         //this.toggle();
 		item.votes++;
 		console.log(item);
-		console.log(item.id);
+		// console.log(item.id);
         if (item.id){
             axios
-                .put('/api/recipes/' + item.id + '/', item)
+                .put('api/recipes/' + item.id + '/', item)
                 .then((res) => this.refreshList());
             return;
         }
         axios
             .post("api/recipes/", item)
-            .then((res) => this.refreshList());
+            .then((res) => this.refreshList().bind(this));
     };
 
 	// Reset the votes to 0

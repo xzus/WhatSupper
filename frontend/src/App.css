@@ -40,7 +40,7 @@
 }
 
 
-.recipesVote{
+.recipesVote {
   font-size: xx-large;
   margin-left: 4vw;
   margin-right: 4vw;
@@ -56,39 +56,31 @@
   display: flex;
 
 }
-/* 
-button.votebutton {
-  margin-left: 4vw; 
-  display: flex;
-  align-items: right;  background-color: #4CAF50;
-  border: none;
-  color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-} */
 
-.recipePic{
+.recipePic {
   display: block;
-  /* margin-left: auto;
-  margin-right: auto; */
-  /* width: 50vw;
-  height: 50vw; */
+
 }
 
-.recipesNameVote{
+.recipesNameVote {
   font-size: xx-large;
   align-items: right;
-  /* justify-content: left; */
-  /* margin-left: 4vw;
-  margin-right: 4vw;
-  margin-bottom: 3vw; */
-
   margin-left: auto;
   margin-right: auto;
   display: flex;
+}
+
+.homeDescription {
+  display: flex;
+  width: 60vw;
+  border: 0.25vw solid black;
+  padding: 1vw;
+  margin: 2vw;
+  background: #FFFFFF;
+
+}
+
+.homeCard {
+  border: 0.25vw solid black;
+
 }

@@ -23,7 +23,7 @@ const NavBar = (props) => {
             <Nav className="me-auto">
                 <Nav.Link href="calendar">Calendar</Nav.Link>
                 <Nav.Link href="voting">Voting</Nav.Link>
-                <Nav.Link href="pastrecipes">Past Recipes</Nav.Link>
+                <Nav.Link href="pastrecipes">Recipes</Nav.Link>
                 <Nav.Link href="groceries">Groceries</Nav.Link>
                 <Nav.Link href="pantry">Pantry</Nav.Link>
             </Nav>
