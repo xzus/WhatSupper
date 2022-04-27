@@ -1,113 +1,292 @@
 import React from 'react';
+import { useState } from "react";
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
+import Card from 'react-bootstrap/Card'
 
-function groceriesPage() {
+function GroceriesPage() {
+    const titles = ["Pantry", "Produce", "Dairy", "Meat", "Frozen", "Miscellaneous"];
+
+    // Pantry
+    const [member, setMember] = useState("");
+    const [members, setMembers] = useState([]);
+
+    const removeMember = (index) => {
+        setMembers((members) => members.filter((_, i) => i !== index));
+      };
+
+    const addMember = (e) => {
+      e.preventDefault();
+      setMembers((members) => [
+        ...members,
+        {member}
+      ]);
+    };
+
+
+    // Dairy List
+    const [dairy, setDairy] = useState("");
+    const [dairys, setDairys] = useState([]);
+
+    const removeDairy = (index) => {
+        setDairys((dairys) => dairys.filter((_, i) => i !== index));
+      };
+
+    const addDairy = (e) => {
+      e.preventDefault();
+      setDairys((dairys) => [
+        ...dairys,
+        {
+          dairy
+        }
+      ]);
+    };
+
+    // produce
+
+    const [produce, setProduce] = useState("");
+    const [produces, setProduces] = useState([]);
+
+    const removeProduce = (index) => {
+        setProduces((produces) => produces.filter((_, i) => i !== index));
+      };
+
+    const addProduce = (e) => {
+      e.preventDefault();
+      setProduces((produces) => [
+        ...produces,
+        {
+          produce
+        }
+      ]);
+    };
+
+
+    // meat
+    const [meat, setMeat] = useState("");
+    const [meats, setMeats] = useState([]);
+
+    const removeMeat = (index) => {
+        setMeats((meats) => meats.filter((_, i) => i !== index));
+      };
+
+    const addMeat = (e) => {
+      e.preventDefault();
+      setMeats((meats) => [
+        ...meats,
+        {
+          meat
+        }
+      ]);
+    };
+
+    // frozen
+    const [frozen, setFrozen] = useState("");
+    const [frozens, setFrozens] = useState([]);
+
+    const removeFrozen = (index) => {
+        setFrozens((frozens) => frozens.filter((_, i) => i !== index));
+      };
+
+    const addFrozen = (e) => {
+      e.preventDefault();
+      setFrozens((frozens) => [
+        ...frozens,
+        {
+          frozen
+        }
+      ]);
+    };
+
+    // misc
+    const [misc, setMisc] = useState("");
+    const [miscs, setMiscs] = useState([]);
+
+    const removeMisc = (index) => {
+        setMiscs((miscs) => miscs.filter((_, i) => i !== index));
+      };
+
+    const addMisc = (e) => {
+      e.preventDefault();
+      setMiscs((miscs) => [
+        ...miscs,
+        {
+          misc
+        }
+      ]);
+    };
+
+
+
     return (
         <div>
             <h1>Grocery List </h1>
-            
-            <button type="button" class="btn btn-outline-dark btn-lg">Add</button>
-                
-            <table class="table">
-                <thead>
-                <tr class="table-success">
-                    <th scope="col"><h4>Pantry</h4></th>
-                    <th scope="col"><h4>Quantity</h4></th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row"><h7>Noodles</h7></th>
-                    <th scope="row"><h7>4 packs</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Black Beans</h7></th>
-                    <th scope="row"><h7>2 cans</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Bread</h7></th>
-                    <th scope="row"><h7>1</h7></th>
-                </tr>
+            <Row xs={1} md={2} className="g-4">
+                    <Col>
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{titles[0]}</Card.Title>
+                        <Card.Text>
+                            <form onSubmit={addMember}>
+                                <fieldset>
+                                    <label>item: </label>
+                                    <input value={member} onChange={(e) => setMember(e.target.value)} />
+                                    <button class="btn btn-warning">add item</button>
 
-                <tr class="table-primary">
-                    <th scope="row"><h4>Produce</h4></th>
-                    <th scope="row"><h4>Quantity</h4></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Tomato</h7></th>
-                    <th scope="row"><h7>4</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Orange</h7></th>
-                    <th scope="row"><h7>2</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Lettuce</h7></th>
-                    <th scope="row"><h7>1</h7></th>
-                </tr>
+                                </fieldset>
+                            </form>
 
+                            {members.map((member, index) => {
+                                return (
+                                    <p>
+                                        {member.member}
+                                        <button class="btn btn-warning" onClick={() => removeMember(index)}>remove</button>
 
-                <tr class="table-danger">
-                    <th scope="row"><h4>Meats</h4></th>
-                    <th scope="row"><h4>Quantity</h4></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Beef</h7></th>
-                    <th scope="row"><h7>2 lb</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Chicken Breast</h7></th>
-                    <th scope="row"><h7>4 lb</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Shrimp</h7></th>
-                    <th scope="row"><h7>1 lb</h7></th>
-                </tr>
+                                    </p>
+                                );
+                            })}
+                            
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
 
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{titles[2]}</Card.Title>
+                        <Card.Text>
+                            <form onSubmit={addDairy}>
+                                <fieldset>
+                                    <label>item: </label>
+                                    <input value={dairy} onChange={(e) => setDairy(e.target.value)} />
+                                    <button class="btn btn-warning">add item</button>
 
-                <tr class="table-info">
-                    <th scope="row"><h4>Dairy</h4></th>
-                    <th scope="row"><h4>Quantity</h4></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7> 2% Milk</h7></th>
-                    <th scope="row"><h7>1</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Cheese</h7></th>
-                    <th scope="row"><h7>1</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Butter</h7></th>
-                    <th scope="row"><h7>1 stick</h7></th>
-                </tr>
+                                </fieldset>
+                            </form>
 
+                            {dairys.map((dairy, index) => {
+                                return (
+                                    <p>
+                                        {dairy.dairy}
+                                        <button class="btn btn-warning" onClick={() => removeDairy(index)}>remove</button>
 
-                <tr class="table-warning">
-                    <th scope="row"><h4>Frozen</h4></th>
-                    <th scope="row"><h4>Quantity</h4></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Waffles</h7></th>
-                    <th scope="row"><h7>1</h7></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Fries</h7></th>
-                    <th scope="row"><h7>1</h7></th>
-                </tr>
+                                    </p>
+                                );
+                            })}
+                            
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
 
-                <tr class="table-dark">
-                    <th scope="row"><h4>Miscellaneous</h4></th>
-                    <th scope="row"><h4>Quantity</h4></th>
-                </tr>
-                <tr>
-                    <th scope="row"><h7>Napkins</h7></th>
-                    <th scope="row"><h7>4</h7></th>
-                </tr>
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{titles[1]}</Card.Title>
+                        <Card.Text>
+                            <form onSubmit={addProduce}>
+                                <fieldset>
+                                    <label>item: </label>
+                                    <input value={produce} onChange={(e) => setProduce(e.target.value)} />
+                                    <button class="btn btn-warning">add item</button>
+                                </fieldset>
+                            </form>
 
-                </tbody>
-            </table>
+                            {produces.map((produce, index) => {
+                                return (
+                                    <p>
+                                        {produce.produce}
+                                        <button class="btn btn-warning" onClick={() => removeProduce(index)}>remove</button>
+                                    </p>
+                                );
+                            })}
+                            
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+
+                    
+                    </Col>
+
+                    <Col>
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{titles[3]}</Card.Title>
+                        <Card.Text>
+                            <form onSubmit={addMeat}>
+                                <fieldset>
+                                    <label>item: </label>
+                                    <input value={meat} onChange={(e) => setMeat(e.target.value)} />
+                                    <button class="btn btn-warning">add item</button>
+                                </fieldset>
+                            </form>
+
+                            {meats.map((meat, index) => {
+                                return (
+                                    <p>
+                                        {meat.meat}
+                                        <button class="btn btn-warning" onClick={() => removeMeat(index)}>remove</button>
+
+                                    </p>
+                                );
+                            })}
+                            
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{titles[4]}</Card.Title>
+                        <Card.Text>
+                            <form onSubmit={addFrozen}>
+                                <fieldset>
+                                    <label>item: </label>
+                                    <input value={frozen} onChange={(e) => setFrozen(e.target.value)} />
+                                    <button class="btn btn-warning">add item</button>
+                                </fieldset>
+                            </form>
+
+                            {frozens.map((frozen, index) => {
+                                return (
+                                    <p>
+                                        {frozen.frozen}
+                                        <button class="btn btn-warning" onClick={() => removeFrozen(index)}>remove</button>
+
+                                    </p>
+                                );
+                            })}
+                            
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+
+                    <Card>
+                        <Card.Body>
+                        <Card.Title>{titles[5]}</Card.Title>
+                        <Card.Text>
+                            <form onSubmit={addMisc}>
+                                <fieldset>
+                                    <label>item: </label>
+                                    <input value={misc} onChange={(e) => setMisc(e.target.value)} />
+                                    <button class="btn btn-warning">add item</button>
+                                </fieldset>
+                            </form>
+
+                            {miscs.map((misc, index) => {
+                                return (
+                                    <p>
+                                        {misc.misc}
+                                        <button class="btn btn-warning" onClick={() => removeMisc(index)}>remove</button>
+
+                                    </p>
+                                );
+                            })}
+                            
+                        </Card.Text>
+                        </Card.Body>
+                    </Card>
+                    </Col>
+            </Row>
         </div>
     )
 }
 
-export default groceriesPage;
+export default GroceriesPage;
