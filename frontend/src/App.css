@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: #FFD24D;
+  background-color: #ffd24d;
   height: 100%;
 }
 
@@ -39,7 +39,6 @@
   }
 }
 
-
 .recipesVote {
   font-size: xx-large;
   margin-left: 4vw;
@@ -54,12 +53,10 @@
   margin-left: 10vw;
   margin-right: 10vw;
   display: flex;
-
 }
 
 .recipePic {
   display: block;
-
 }
 
 .recipesNameVote {
@@ -76,11 +73,16 @@
   border: 0.25vw solid black;
   padding: 1vw;
   margin: 2vw;
-  background: #FFFFFF;
-
+  background: #ffffff;
 }
 
 .homeCard {
   border: 0.25vw solid black;
+}
 
+.col-sm-6 {
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
