@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Row, Card} from 'react-bootstrap'
 
-const RecipeBlock = (props) => {
+const Calendar = (props) => {
   const boxStyle = {
     'backgroundColor' : '#FFBF00',
     'width': '85%',
