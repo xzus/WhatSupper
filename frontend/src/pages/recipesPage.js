@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './modal';
 
 function recipesPage() {
   return (
@@ -123,11 +124,13 @@ function recipesPage() {
         </div>
       </div>
 
+      <div className = "Submit Section">
+        <button> Add a Recipe </button>
+        <Modal />
+      </div>
+
     </div>
-
-
-
-  )
+  );
 }
 
 export default recipesPage;
