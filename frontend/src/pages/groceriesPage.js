@@ -7,7 +7,7 @@ import Card from 'react-bootstrap/Card'
 function GroceriesPage() {
     const titles = ["Pantry", "Produce", "Dairy", "Meat", "Frozen", "Miscellaneous"];
 
-    // Pantry
+    // Groceries
     const [member, setMember] = useState("");
     const [members, setMembers] = useState([]);
 
@@ -123,14 +123,14 @@ function GroceriesPage() {
             <h1>Grocery List </h1>
             <Row xs={1} md={2} className="g-4">
                     <Col>
-                    <Card>
+                    <Card style={{marginLeft: '4vw', border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
                         <Card.Body>
                         <Card.Title>{titles[0]}</Card.Title>
                         <Card.Text>
                             <form onSubmit={addMember}>
                                 <fieldset>
-                                    <label>item: </label>
-                                    <input value={member} onChange={(e) => setMember(e.target.value)} />
+                                    {/* <label style={{marginRight: '2vw'}}>item: </label> */}
+                                    <input style={{marginRight: '4vw', marginBottom: '3vh', width: '30vw'}} value={member} onChange={(e) => setMember(e.target.value)} />
                                     <button class="btn btn-warning">add item</button>
 
                                 </fieldset>
@@ -139,7 +139,7 @@ function GroceriesPage() {
                             {members.map((member, index) => {
                                 return (
                                     <p>
-                                        {member.member}
+                                        <label style={{marginRight: '4vw'}}>{member.member}</label>
                                         <button class="btn btn-warning" onClick={() => removeMember(index)}>remove</button>
 
                                     </p>
@@ -150,14 +150,14 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card>
+                    <Card style={{marginLeft: '4vw', border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
                         <Card.Body>
                         <Card.Title>{titles[2]}</Card.Title>
                         <Card.Text>
                             <form onSubmit={addDairy}>
                                 <fieldset>
-                                    <label>item: </label>
-                                    <input value={dairy} onChange={(e) => setDairy(e.target.value)} />
+                                    {/* <label style={{marginRight: '2vw'}}>item: </label> */}
+                                    <input style={{marginRight: '4vw', marginBottom: '3vh', width: '30vw'}} value={dairy} onChange={(e) => setDairy(e.target.value)} />
                                     <button class="btn btn-warning">add item</button>
 
                                 </fieldset>
@@ -166,7 +166,7 @@ function GroceriesPage() {
                             {dairys.map((dairy, index) => {
                                 return (
                                     <p>
-                                        {dairy.dairy}
+                                        <label style={{marginRight: '4vw'}}>{dairy.dairy}</label>
                                         <button class="btn btn-warning" onClick={() => removeDairy(index)}>remove</button>
 
                                     </p>
@@ -177,14 +177,14 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card>
+                    <Card style={{marginLeft: '4vw', border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
                         <Card.Body>
                         <Card.Title>{titles[1]}</Card.Title>
                         <Card.Text>
                             <form onSubmit={addProduce}>
                                 <fieldset>
-                                    <label>item: </label>
-                                    <input value={produce} onChange={(e) => setProduce(e.target.value)} />
+                                    {/* <label style={{marginRight: '2vw'}}>item: </label> */}
+                                    <input style={{marginRight: '4vw', marginBottom: '3vh', width: '30vw'}} value={produce} onChange={(e) => setProduce(e.target.value)} />
                                     <button class="btn btn-warning">add item</button>
                                 </fieldset>
                             </form>
@@ -192,7 +192,7 @@ function GroceriesPage() {
                             {produces.map((produce, index) => {
                                 return (
                                     <p>
-                                        {produce.produce}
+                                        <label style={{marginRight: '4vw'}}>{produce.produce}</label>
                                         <button class="btn btn-warning" onClick={() => removeProduce(index)}>remove</button>
                                     </p>
                                 );
@@ -206,14 +206,14 @@ function GroceriesPage() {
                     </Col>
 
                     <Col>
-                    <Card>
+                    <Card style={{border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
                         <Card.Body>
                         <Card.Title>{titles[3]}</Card.Title>
                         <Card.Text>
                             <form onSubmit={addMeat}>
                                 <fieldset>
-                                    <label>item: </label>
-                                    <input value={meat} onChange={(e) => setMeat(e.target.value)} />
+                                    {/* <label style={{marginRight: '2vw'}}>item: </label> */}
+                                    <input style={{marginRight: '4vw', marginBottom: '3vh', width: '30vw'}} value={meat} onChange={(e) => setMeat(e.target.value)} />
                                     <button class="btn btn-warning">add item</button>
                                 </fieldset>
                             </form>
@@ -221,7 +221,7 @@ function GroceriesPage() {
                             {meats.map((meat, index) => {
                                 return (
                                     <p>
-                                        {meat.meat}
+                                        <label style={{marginRight: '4vw'}}>{meat.meat}</label>
                                         <button class="btn btn-warning" onClick={() => removeMeat(index)}>remove</button>
 
                                     </p>
@@ -232,14 +232,14 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card>
+                    <Card style={{border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
                         <Card.Body>
                         <Card.Title>{titles[4]}</Card.Title>
                         <Card.Text>
                             <form onSubmit={addFrozen}>
                                 <fieldset>
-                                    <label>item: </label>
-                                    <input value={frozen} onChange={(e) => setFrozen(e.target.value)} />
+                                    {/* <label style={{marginRight: '2vw'}}>item: </label> */}
+                                    <input style={{marginRight: '4vw', marginBottom: '3vh', width: '30vw'}} value={frozen} onChange={(e) => setFrozen(e.target.value)} />
                                     <button class="btn btn-warning">add item</button>
                                 </fieldset>
                             </form>
@@ -247,7 +247,7 @@ function GroceriesPage() {
                             {frozens.map((frozen, index) => {
                                 return (
                                     <p>
-                                        {frozen.frozen}
+                                        <label style={{marginRight: '4vw'}}>{frozen.frozen}</label>
                                         <button class="btn btn-warning" onClick={() => removeFrozen(index)}>remove</button>
 
                                     </p>
@@ -258,14 +258,14 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card>
+                    <Card style={{border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
                         <Card.Body>
                         <Card.Title>{titles[5]}</Card.Title>
                         <Card.Text>
                             <form onSubmit={addMisc}>
                                 <fieldset>
-                                    <label>item: </label>
-                                    <input value={misc} onChange={(e) => setMisc(e.target.value)} />
+                                    {/* <label style={{marginRight: '3vw'}}>item: </label> */}
+                                    <input style={{marginRight: '4vw', marginBottom: '3vh', width: '30vw'}} value={misc} onChange={(e) => setMisc(e.target.value)} />
                                     <button class="btn btn-warning">add item</button>
                                 </fieldset>
                             </form>
@@ -273,8 +273,8 @@ function GroceriesPage() {
                             {miscs.map((misc, index) => {
                                 return (
                                     <p>
-                                        {misc.misc}
-                                        <button class="btn btn-warning" onClick={() => removeMisc(index)}>remove</button>
+                                        <label style={{marginRight: '4vw'}}>{misc.misc}</label>
+                                        <button  class="btn btn-warning" onClick={() => removeMisc(index)}>remove</button>
 
                                     </p>
                                 );

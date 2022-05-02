@@ -1,7 +1,7 @@
 .App {
   text-align: center;
   background-color: #ffd24d;
-  height: 100%;
+  height: 400vmin;
 }
 
 .App-logo {
@@ -85,4 +85,47 @@
   padding-right: 10px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+#pantryTable{
+  border: 0.3vw solid #726e75;
+  width: 60vw;
+  height: 200px;
+  /* border-bottom: 1vw solid black; */
+  text-align: center;
+  margin-left: 20vw;
+  background-color: #ffffff;
+}
+
+#pantryTable td, #pantryTable th{
+  border: 0.15vw solid #ddd;
+  padding: 1vw;
+}
+
+.pantryInput{
+  margin-top: 2vw;
+}
+
+.pantryQuantity{
+  /* position: absolute; */
+  /* margin-right: 4vw;
+  margin-bottom: 3vh;  */
+  margin-left:1vw; 
+  width: 5vw;
+  /* display: inline-block; */
+  align-content: center;
+}
+
+.pantryItem{
+  
+  margin-right: 3vw; 
+  margin-bottom: 3vh;
+  margin-left:1vw; 
+  width: 15vw;
+
+}
+
+.pantryButton{
+  margin-left : 3vw;
+  background-color: #61dafb;
 }

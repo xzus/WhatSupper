@@ -23,20 +23,20 @@ function homePage() {
           website! Explore our options below...
         </h6>
       </div></center>
-    <Card>
-  <Card.Body>Reserved for Calendar</Card.Body>
-</Card>
-    </Row>
-    <Row xs={1} md={2} className="g-4">
+    <Card style={{border: '0.25vw solid black'}}>
+      <Card.Body>Reserved for Calendar</Card.Body>
+    </Card>
+  </Row>
+  <Row xs={1} md={2} className="g-4">
   {Array.from({ length: 4 }).map((_, idx) => (
     <Col>
       <Link to={location[idx]}>
-        <Card>
+        <Card style={{border: '0.25vw solid black', marginTop: '5vh'} }>
           <Card.Img/>
           <Card.Body>
             <Card.Title>{titles[idx]}</Card.Title>
             <Card.Text>
-              <img src={pics[idx]} width="300vw" height="200vh"></img>
+              <img src={pics[idx]} width="500vw" height="300vh"></img>
             </Card.Text>
           </Card.Body>
         </Card>
