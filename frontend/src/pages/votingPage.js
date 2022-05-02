@@ -6,12 +6,7 @@ class votingPage extends Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			recipes : [
-				{name: "Butter Chicken", votes: 0, pic:"https://www.aheadofthyme.com/wp-content/uploads/2016/01/indian-butter-chicken-3.jpg"},
-				{name: "Spaghetti & Meatballs", votes: 0, pic: "https://hips.hearstapps.com/delish/assets/17/39/1506456062-delish-spaghetti-meatballs.jpg"},
-				{name: "Pizza", votes: 0, pic: "https://austinspizza.com/wp-content/uploads/2019/03/ap-about-us-food-02.jpg"},
-				{name: "Tacos", votes: 0, pic: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQli0rEwuMjUfZQ_iTxGgxAUbFM0pZMGN0PrQ&usqp=CAU"}
-			],
+			recipes : null,
 			// recipes : [],
 			// recipes : {recipe: "Pasta", votes: 0},
             modal: false
@@ -24,7 +19,7 @@ class votingPage extends Component{
 
     refreshList = () => {
         axios   
-            .get("api/recipes/")
+            .get("api/votes/")
             .then((res) => this.setState({recipes : res.data}).bind(this))
             .catch((err) => console.log(err));
 
@@ -41,12 +36,12 @@ class votingPage extends Component{
 		// console.log(item.id);
         if (item.id){
             axios
-                .put('api/recipes/' + item.id + '/', item)
+                .put('api/votes/' + item.id + '/', item)
                 .then((res) => this.refreshList());
             return;
         }
         axios
-            .post("api/recipes/", item)
+            .post("api/votes/", item)
             .then((res) => this.refreshList().bind(this));
     };
 
@@ -56,7 +51,7 @@ class votingPage extends Component{
 		rList.forEach((item) => {
 			item.votes = 0;
 			axios
-			.put('/api/recipes/' + item.id + '/', item)
+			.put('/api/votes/' + item.id + '/', item)
 			.then((res) => this.refreshList());
 		return;
 		});
@@ -76,6 +71,8 @@ class votingPage extends Component{
 	}
 
 	render(){
+		if(this.state.recipes === null){
+			return null}
 		return(
 			<>
 				<h1>Vote For Which Recipes You'd Like to Eat!</h1>
@@ -87,7 +84,7 @@ class votingPage extends Component{
                                 
 								
 								<div className="recipesNameVote">
-									{recip.recipe}
+									{recip.recipe.recipeName}
 								</div>
 								<div className="voteButton">
 							    	<button class="voteButton" onClick={() => this.handleVote(recip)}>Vote</button>
@@ -97,7 +94,7 @@ class votingPage extends Component{
 									{recip.votes}
 								</div>
                                 <div className="recipePic">
-									<img src={recip.pic} width="300" height="200"></img>
+									<img src={recip.recipe.image} width="300" height="200"></img>
 								</div>
 							</div>
 						)

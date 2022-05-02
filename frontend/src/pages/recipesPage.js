@@ -1,5 +1,5 @@
 import React from 'react';
-import Modal from './modal';
+import Modal from './modal.js';
 import {Component} from 'react';
 
 class recipesPage extends Component{
@@ -30,7 +30,7 @@ class recipesPage extends Component{
   };
 
   createItem = () => {
-    const item = { title: "", description: "", completed: false };
+    const item = { title: "", description: "", image: null };
     this.setState({ activeItem: item, modal: !this.state.modal });
   };
 
@@ -164,13 +164,13 @@ class recipesPage extends Component{
         <div className = "Submit Section">
           <button onClick={this.createItem}> Add a Recipe </button>
         </div>
-       
+        {this.state.modal ? (
           <Modal
-            activeItem = {this.state.activeItem}
-            toggle = {this.toggle}
-            onSave = {this.handleSubmit}
+            activeItem={this.state.activeItem}
+            toggle={this.toggle}
+            onSave={this.handleSubmit}
           />
-
+        ) : null}
       </div>
     );
   };
