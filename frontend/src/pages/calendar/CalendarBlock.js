@@ -1,7 +1,17 @@
 import React from 'react';
-import {Container, Row, Card} from 'react-bootstrap'
+import {Table} from 'react-bootstrap'
 
 const Calendar = (props) => {
+  const days = [
+    "Mon",
+    "Tues",
+    "Wed",
+    "Thur",
+    "Fri",
+    "Sat",
+    "Sun",
+  ];
+
   const boxStyle = {
     'backgroundColor' : '#FFBF00',
     'width': '85%',
@@ -13,17 +23,29 @@ const Calendar = (props) => {
     'color' : props.color,
     'fontSize': '30px'
   };
-
   return (
-    <Card style = {boxStyle}>
-      <Card.Title style={recipeTextStyle}>Recipe #{props.num}</Card.Title>
-
-      <Card.Body>
-        <h4>{props.recipeText}</h4>
-      </Card.Body>
-
-    </Card>
+    <Table>
+      <thead>
+        <tr>
+          {days.map((day) => {
+            return (
+              <th key={day}>{day}</th>
+            );
+          })}
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          {days.map((day) => {
+            return (
+              <td key={day}>{props.data[day] == "" ?
+                    "No Recipe" :
+                    props.data[day]}</td>
+            )})}
+        </tr>
+      </tbody>
+    </Table>
   )
 }
 
-export default RecipeBlock;
+export default Calendar;
