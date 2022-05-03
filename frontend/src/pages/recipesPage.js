@@ -41,44 +41,43 @@ class recipesPage extends Component{
   render() {
     return (
       <div>
-            <h1> Popular Recipes </h1>
+            <h1 style={{marginBottom: '3vh', marginTop: '2vh'}}> Popular Recipes </h1>
             <div class="row">
             <div class="col-sm-6">
-              <div class="card">
+              <div class="recipeCard">
                 <div class="card-body">
                   <h5 class="card-title"> Taco Salad </h5>
                   <p class="card-text"> Winner on April 4th! </p>
-                  <a href="#" class="btn btn-primary"> Recipe </a>
+                  <a href="https://www.wholesomeyum.com/recipes/taco-salad/" class="btn btn-warning"> Recipe </a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6">
-              <div class="card">
+              <div class="recipeCard">
                 <div class="card-body">
                   <h5 class="card-title"> Chicken Fried Rice </h5>
                   <p class="card-text"> Winner on March 28th! </p>
-                  <a href="#" class="btn btn-primary"> Recipe </a>
+                  <a href="https://www.averiecooks.com/easy-better-takeout-chicken-fried-rice/" class="btn btn-warning"> Recipe </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
           <div class="col-sm-6">
-            <div class="card">
+            <div class="recipeCard">
               <div class="card-body">
                 <h5 class="card-title"> Veggie Quesadillas </h5>
                 <p class="card-text">Winner on February 22nd! </p>
-                <a href="#" class="btn btn-primary"> Recipe </a>
+                <a href="https://www.gimmesomeoven.com/easy-veggie-quesadillas-recipe/" class="btn btn-warning"> Recipe </a>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
-            <div class="card">
+            <div class="recipeCard">
               <div class="card-body">
                 <h5 class="card-title"> Fajitas</h5>
-
                 <p class="card-text"> Winner on January 1st! </p>
-                <a href="#" class="btn btn-primary"> Recipe </a>
+                <a href="https://www.spendwithpennies.com/easy-chicken-fajitas/" class="btn btn-warning"> Recipe </a>
               </div>
             </div>
           </div>
@@ -86,76 +85,72 @@ class recipesPage extends Component{
         <h1> Past Recipes </h1>
         <div class="row">
             <div class="col-sm-6">
-              <div class="card">
+              <div class="recipeCard">
                 <div class="card-body">
-                  <h5 class="card-title"> Brocoli Pesto Pasta </h5>
-
-                  <a href="#" class="btn btn-primary"> Recipe </a>
+                  <h5 class="card-title"> Broccoli Pesto Pasta </h5>
+                  <a href="https://themodernproper.com/broccoli-pesto-pasta" class="btn btn-warning"> Recipe </a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6">
-              <div class="card">
+              <div class="recipeCard">
                 <div class="card-body">
                   <h5 class="card-title"> Instant Pot Mac and Cheese </h5>
-                  
-                  <a href="#" class="btn btn-primary"> Recipe </a>
+                  <a href="https://thesaltymarshmallow.com/instant-pot-mac-and-cheese/" class="btn btn-warning"> Recipe </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
           <div class="col-sm-6">
-            <div class="card">
+            <div class="recipeCard">
               <div class="card-body">
-                <h5 class="card-title"> Cauliflower Gnocci </h5>
-                
-                <a href="#" class="btn btn-primary"> Recipe </a>
+                <h5 class="card-title"> Cauliflower Gnocchi </h5>
+                <a href="https://pinchofyum.com/homemade-cauliflower-gnocchi" class="btn btn-warning"> Recipe </a>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
-            <div class="card">
+            <div class="recipeCard">
               <div class="card-body">
                 <h5 class="card-title"> Roasted Red Pepper Pasta </h5>
-                
-                <a href="#" class="btn btn-primary"> Recipe </a>
+                <a href="https://themodernproper.com/creamy-roasted-red-pepper-pasta" class="btn btn-warning"> Recipe </a>
               </div>
             </div>
           </div>
         </div>
         <div class="row">
             <div class="col-sm-6">
-              <div class="card">
+              <div class="recipeCard">
                 <div class="card-body">
                   <h5 class="card-title">Spicy Garlic Ramen Noodles</h5>
-                  <a href="#" class="btn btn-primary"> Recipe </a>
+                  <a href="https://lindseyeatsla.com/spicy-garlic-noodles/" class="btn btn-warning"> Recipe </a>
                 </div>
               </div>
             </div>
             <div class="col-sm-6">
-              <div class="card">
+              <div class="recipeCard">
                 <div class="card-body">
                   <h5 class="card-title"> Falafel Pita Pocket </h5>
-                  <a href="#" class="btn btn-primary"> Recipe </a>
+                  <a href="https://www.myrecipes.com/recipe/mini-falafel-pocket-sandwiches" class="btn btn-warning"> Recipe </a>
                 </div>
               </div>
             </div>
           </div>
           <div class="row">
           <div class="col-sm-6">
-            <div class="card">
+            <div class="recipeCard">
               <div class="card-body">
                 <h5 class="card-title"> Shrimp Alfredo Scampi </h5>
-                <a href="#" class="btn btn-primary"> Recipe </a>
+                <a href="https://krollskorner.com/recipes/shrimp-scampi-alfredo/" class="btn btn-warning"> Recipe </a>
               </div>
             </div>
           </div>
           <div class="col-sm-6">
-            <div class="card">
+            <div class="recipeCard">
               <div class="card-body">
                 <h5 class="card-title"> Roasted Brussel Sprouts</h5>
-                <a href="#" class="btn btn-primary"> Recipe </a>
+                <a href="https://www.foodnetwork.com/recipes/ina-garten/roasted-brussels-sprouts-recipe2-1941953" class="btn btn-warning"> Recipe </a>
               </div>
             </div>
           </div>

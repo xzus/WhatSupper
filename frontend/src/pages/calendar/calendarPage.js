@@ -19,19 +19,19 @@ function CalendarPage() {
     const recipeData = [
       {
         num: 1,
-        color: 'pink',
+        color: '#720026',
         recipeText :'Pasta w/Meat Sauce',
         days: 'Monday, Tuesday, Wednesday',
       },
       {
         num: 2,
-        color: 'blue',
+        color: '#17C3B2',
         recipeText :'Enchiladas',
         days: 'Thursday, Friday, Saturday',
       },
       {
         num: 3,
-        color: 'green',
+        color: '#4D6DFF',
         recipeText :'Grilled Cheese Sandwiches',
         days: 'Sunday',
       }
@@ -40,9 +40,11 @@ function CalendarPage() {
     console.log(CalendarData);
 
     return (
+
         <Container>
+            <h1 style={{marginBottom: '3vh', marginTop: '2vh'}}> Calendar </h1>
             <Calendar data={CalendarData}/>
-            <Row className="justify-content-center">
+            <Row style={{marginTop: '5vh'}} className="justify-content-center">
               {recipeData.map((recipe) => {
                 return (
                   <RecipeBlock setter= {setCalendarData} key={recipe.recipeText} {...recipe}/>

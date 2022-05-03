@@ -120,10 +120,10 @@ function GroceriesPage() {
 
     return (
         <div>
-            <h1>Grocery List </h1>
+            <h1 style={{marginBottom: '3vh', marginTop: '2vh'}}>Grocery List </h1>
             <Row xs={1} md={2} className="g-4">
                     <Col>
-                    <Card style={{marginLeft: '4vw', border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
+                    <Card style={{marginLeft: '4vw', border: '0.25vw solid #726e75', marginTop: '5vh', width: '45vw', backgroundColor: '#ffd24d'}}>
                         <Card.Body>
                         <Card.Title>{titles[0]}</Card.Title>
                         <Card.Text>
@@ -150,7 +150,7 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card style={{marginLeft: '4vw', border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
+                    <Card style={{marginLeft: '4vw', border: '0.25vw solid  #726e75', marginTop: '5vh', width: '45vw', backgroundColor: '#ffd24d'}}>
                         <Card.Body>
                         <Card.Title>{titles[2]}</Card.Title>
                         <Card.Text>
@@ -177,7 +177,7 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card style={{marginLeft: '4vw', border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
+                    <Card style={{marginLeft: '4vw', border: '0.25vw solid  #726e75', marginTop: '5vh', width: '45vw', backgroundColor: '#ffd24d'}}>
                         <Card.Body>
                         <Card.Title>{titles[1]}</Card.Title>
                         <Card.Text>
@@ -206,7 +206,7 @@ function GroceriesPage() {
                     </Col>
 
                     <Col>
-                    <Card style={{border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
+                    <Card style={{border: '0.25vw solid  #726e75', marginTop: '5vh', width: '45vw', backgroundColor: '#ffd24d'}}>
                         <Card.Body>
                         <Card.Title>{titles[3]}</Card.Title>
                         <Card.Text>
@@ -232,7 +232,7 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card style={{border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
+                    <Card style={{border: '0.25vw solid  #726e75', marginTop: '5vh', width: '45vw', backgroundColor: '#ffd24d'}}>
                         <Card.Body>
                         <Card.Title>{titles[4]}</Card.Title>
                         <Card.Text>
@@ -258,7 +258,7 @@ function GroceriesPage() {
                         </Card.Body>
                     </Card>
 
-                    <Card style={{border: '0.25vw solid black', marginTop: '5vh', width: '45vw'}}>
+                    <Card style={{border: '0.25vw solid  #726e75', marginTop: '5vh', width: '45vw', backgroundColor: '#ffd24d'}}>
                         <Card.Body>
                         <Card.Title>{titles[5]}</Card.Title>
                         <Card.Text>

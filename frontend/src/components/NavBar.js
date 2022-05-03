@@ -2,10 +2,11 @@ import React from "react";
 import {Navbar, NavDropdown, Container, Nav} from "react-bootstrap";
 // import SearchBar from './SearchBar';
 import logo from "../assets/logo.png";
+import '../App.css';
 
 const NavBar = (props) => {
     return(
-        <Navbar bg="#FFD24D" expand="xl">
+        <Navbar background-color="#ffd24d" expand="xl">
         <Container>
             <Navbar.Brand href="home">
                 <img
@@ -20,7 +21,7 @@ const NavBar = (props) => {
             <Navbar.Brand href="home">WhatSupper?</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
+            <Nav className="nav">
                 <Nav.Link href="calendar">Calendar</Nav.Link>
                 <Nav.Link href="voting">Voting</Nav.Link>
                 <Nav.Link href="recipesPage">Recipes</Nav.Link>

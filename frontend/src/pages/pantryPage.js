@@ -39,6 +39,8 @@ function PantryPage() {
     const [frozenitem, setFrozenItem] = useState("");
     const [frozenquantity, setFrozenQuantity] = useState("");
 
+    const[searchFor] = useState("");
+
 
     // const[data, setData] = useState([
     //     {category: "Produce", item: "Broccoli", quantity: "3 bags"},
@@ -189,29 +191,45 @@ function PantryPage() {
     const removeFrozenFromList = (item) => {
         setFrozenData(frozenData.filter((_, i) => i !== item));
     };
+
+    function findString(text) {
+        document.querySelector("#output").textContent="String found? " + window.find(text);
+    }
     
 
     return (
 
         <div>
-            <h1 style={{marginBottom: '4vw'}}>Pantry</h1>
+            <h1 style={{marginBottom: '3vh', marginTop: '2vh'}}>Pantry</h1>
+
+            {/* <div>
+                <form action="" onsubmit="return sendToPage()" method="post">
+                    <input type="text" id="search" placeholder="Search" value=""/>
+                </form>
+            </div> */}
+
+            {/* <label>Quantity:</label> */}
+            {/* <input value={searchFor} />  */}
+            {/* <button onClick='findString({{searchFor}})' class="btn btn-warning pantryButton">add meat item</button> */}
+
             <table id="pantryTable">
-                <tr>
+                <tr class="blueRow">
                     <th><h3>Items</h3></th>
                     <th><h3>Quantity</h3></th>
+                    <th></th>
 
                 </tr>
 
-                <td colSpan={3}>
-                <h5>Produce</h5>
-                {/* <form onSubmit={addProduceMember}>
-                    <label>Item:</label>
-                    <input class="pantryItem" value={produceitem} onChange={(e) => setProduceItem(e.target.value)} />
-                    <label>Quantity:</label>
-                    <input class="pantryQuantity" value={producequantity} onChange={(e) => setProduceQuantity(e.target.value)} /> 
+                <td class="yellowRow" colSpan={3}>
+                    <h5>Produce</h5>
+                    <form onSubmit={addProduceMember}>
+                        <label>Item:</label>
+                        <input class="pantryItem" value={produceitem} onChange={(e) => setProduceItem(e.target.value)} />
+                        <label>Quantity:</label>
+                        <input class="pantryQuantity" value={producequantity} onChange={(e) => setProduceQuantity(e.target.value)} /> 
 
-                    <button class="btn btn-warning pantryButton">add produce item</button>
-                </form> */}
+                        <button class="btn btn-warning pantryButton">add produce item</button>
+                    </form>
                 </td>
 
                 {produceData.map((val,key) => {
@@ -247,7 +265,16 @@ function PantryPage() {
                     )
                 })}
 
-                <td colSpan={3}><h5>Meat</h5></td>
+                <td class="yellowRow" colSpan={3}><h5>Meat</h5>
+                    <form onSubmit={addMeatMember}>
+                        <label>Item:</label>
+                        <input class="pantryItem" value={meatitem} onChange={(e) => setMeatItem(e.target.value)} />
+                        <label>Quantity:</label>
+                        <input class="pantryQuantity" value={meatquantity} onChange={(e) => setMeatQuantity(e.target.value)} /> 
+
+                        <button class="btn btn-warning pantryButton">add meat item</button>
+                    </form>
+                </td>
 
                 {meatData.map((val,key) => {
                     return(
@@ -282,7 +309,16 @@ function PantryPage() {
                     )
                 })}
 
-                <td colSpan={3}><h5>Dairy</h5></td>
+                <td class="yellowRow" colSpan={3}><h5>Dairy</h5>
+                    <form onSubmit={addDairyMember}>
+                        <label>Item:</label>
+                        <input class="pantryItem" value={dairyitem} onChange={(e) => setDairyItem(e.target.value)} />
+                        <label>Quantity:</label>
+                        <input class="pantryQuantity" value={dairyquantity} onChange={(e) => setDairyQuantity(e.target.value)} /> 
+
+                        <button class="btn btn-warning pantryButton">add dairy item</button>
+                    </form>
+                </td>
 
                 {dairyData.map((val,key) => {
                     return(
@@ -317,7 +353,16 @@ function PantryPage() {
                     )
                 })}
 
-                <td colSpan={3}><h5>Pantry</h5></td>
+                <td class="yellowRow" colSpan={3}><h5>Pantry</h5>
+                    <form onSubmit={addPantryMember}>
+                        <label>Item:</label>
+                        <input class="pantryItem" value={pantryitem} onChange={(e) => setPantryItem(e.target.value)} />
+                        <label>Quantity:</label>
+                        <input class="pantryQuantity" value={pantryquantity} onChange={(e) => setPantryQuantity(e.target.value)} /> 
+
+                        <button class="btn btn-warning pantryButton">add pantry item</button>
+                    </form>
+                </td>
 
                 {pantryData.map((val,key) => {
                     return(
@@ -352,7 +397,16 @@ function PantryPage() {
                     )
                 })}
 
-                <td colSpan={3}><h5>Frozen</h5></td>
+                <td class="yellowRow" colSpan={3}><h5>Frozen</h5>
+                    <form onSubmit={addFrozenMember}>
+                        <label>Item:</label>
+                        <input class="pantryItem" value={frozenitem} onChange={(e) => setFrozenItem(e.target.value)} />
+                        <label>Quantity:</label>
+                        <input class="pantryQuantity" value={frozenquantity} onChange={(e) => setFrozenQuantity(e.target.value)} /> 
+
+                        <button class="btn btn-warning pantryButton">add frozen item</button>
+                    </form>
+                </td>
 
                 {frozenData.map((val,key) => {
                     return(
@@ -388,7 +442,16 @@ function PantryPage() {
                 })}
 
 
-                <td colSpan={3}><h5>Miscellaneous</h5></td>
+                <td class="yellowRow" colSpan={3}><h5>Miscellaneous</h5>                
+                    <form onSubmit={addMember}>
+                        <label>Item:</label>
+                        <input class="pantryItem" value={item} onChange={(e) => setItem(e.target.value)} />
+                        <label>Quantity:</label>
+                        <input class="pantryQuantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} /> 
+
+                        <button class="btn btn-warning pantryButton">add miscellaneous item</button>
+                    </form>
+                </td>
 
                 {data.map((val,key) => {
                     return(
@@ -424,63 +487,6 @@ function PantryPage() {
                 })}
 
             </table>
-
-            <div className='pantryInput'>
-                <form onSubmit={addProduceMember}>
-                    <label>Item:</label>
-                    <input class="pantryItem" value={produceitem} onChange={(e) => setProduceItem(e.target.value)} />
-                    <label>Quantity:</label>
-                    <input class="pantryQuantity" value={producequantity} onChange={(e) => setProduceQuantity(e.target.value)} /> 
-
-                    <button class="btn btn-warning pantryButton">add produce item</button>
-                </form>
-
-
-                <form onSubmit={addMeatMember}>
-                    <label>Item:</label>
-                    <input class="pantryItem" value={meatitem} onChange={(e) => setMeatItem(e.target.value)} />
-                    <label>Quantity:</label>
-                    <input class="pantryQuantity" value={meatquantity} onChange={(e) => setMeatQuantity(e.target.value)} /> 
-
-                    <button class="btn btn-warning pantryButton">add meat item</button>
-                </form>
-
-                <form onSubmit={addDairyMember}>
-                    <label>Item:</label>
-                    <input class="pantryItem" value={dairyitem} onChange={(e) => setDairyItem(e.target.value)} />
-                    <label>Quantity:</label>
-                    <input class="pantryQuantity" value={dairyquantity} onChange={(e) => setDairyQuantity(e.target.value)} /> 
-
-                    <button class="btn btn-warning pantryButton">add dairy item</button>
-                </form>
-
-                <form onSubmit={addPantryMember}>
-                    <label>Item:</label>
-                    <input class="pantryItem" value={pantryitem} onChange={(e) => setPantryItem(e.target.value)} />
-                    <label>Quantity:</label>
-                    <input class="pantryQuantity" value={pantryquantity} onChange={(e) => setPantryQuantity(e.target.value)} /> 
-
-                    <button class="btn btn-warning pantryButton">add pantry item</button>
-                </form>
-
-                <form onSubmit={addFrozenMember}>
-                    <label>Item:</label>
-                    <input class="pantryItem" value={frozenitem} onChange={(e) => setFrozenItem(e.target.value)} />
-                    <label>Quantity:</label>
-                    <input class="pantryQuantity" value={frozenquantity} onChange={(e) => setFrozenQuantity(e.target.value)} /> 
-
-                    <button class="btn btn-warning pantryButton">add frozen item</button>
-                </form>
-
-                <form onSubmit={addMember}>
-                    <label>Item:</label>
-                    <input class="pantryItem" value={item} onChange={(e) => setItem(e.target.value)} />
-                    <label>Quantity:</label>
-                    <input class="pantryQuantity" value={quantity} onChange={(e) => setQuantity(e.target.value)} /> 
-
-                    <button class="btn btn-warning pantryButton">add miscellaneous item</button>
-                </form>
-            </div>
 
         </div>
 

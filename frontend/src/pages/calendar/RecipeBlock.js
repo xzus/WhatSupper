@@ -15,7 +15,7 @@ const RecipeBlock = (props) => {
   ];
 
   const boxStyle = {
-    'backgroundColor' : '#FFBF00',
+    'backgroundColor' : '#FFD24D',
     'width': '85%',
     'height': '10em',
     'textAlign': 'left',
@@ -41,7 +41,7 @@ const RecipeBlock = (props) => {
             key={idx}
             id={`day-${idx}`}
             type="radio"
-            variant="secondary"
+            variant="warning"
             name="radio"
             value={day}
             checked={selectedDay === day}
